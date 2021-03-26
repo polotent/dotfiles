@@ -1,0 +1,186 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[settings]
+screenchange-reload = true
+
+[colors]
+black = #282a36	
+gray = #44475a	
+white = #f8f8f2	
+blue = #6272a4	
+cyan = #8be9fd	
+green = #50fa7b	
+orange = #ffb86c	
+pink = #ff79c6	
+purple = #bd93f9	
+red = #ff5555	
+yellow = #f1fa8c
+transparent = #00000000
+
+[bar/main]
+width = 100%
+height = 30
+fixed-center = true
+top = true
+border-top-size = 10
+border-left-size = 10
+border-right-size = 10
+background = ${colors.transparent}
+font-0 = JetBrains Mono:size=10;3
+font-1 = Font Awesome 5 Free Solid:size=12;3
+font-2 = Font Awesome 5 Brands:size=12;3
+modules-left = memory cpu pulseaudio rhythmbox
+modules-center = i3
+modules-right = xkeyboard brightness battery date
+tray-position = right 
+tray-background = ${colors.white}
+wm-restack = i3
+;module-margin = 1
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = caps lock
+format = <label-layout>
+label-layout = " %icon%"
+label-layout-padding = 1
+label-layout-background = ${colors.white}
+label-layout-foreground = ${colors.black}
+layout-icon-0 = ru;RU
+layout-icon-1 = us;US
+label-padding = 1
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+
+label-mode-padding = 2 
+label-mode-background = ${colors.white}
+label-mode-foreground = ${colors.black}
+
+; focused = Active workspace on focused monitor
+label-focused = %name%
+label-focused-padding = 2
+label-focused-background = ${colors.orange}
+label-focused-foreground = ${colors.black}
+label-focused-overline = ${colors.orange}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = 2
+label-unfocused-background = ${colors.black}
+label-unfocused-foreground = ${colors.white}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${colors.orange}
+label-visible-foreground = ${colors.black}
+label-visible-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.white}
+label-urgent-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+label = "%percentage:3%%"
+label-padding = 1
+label-background = ${colors.white}
+label-foreground = ${colors.black}
+
+[module/memory]
+type = internal/memory
+interval = 1
+label = "%percentage_used:3%%"
+label-padding = 1
+label-background = ${colors.orange}
+label-foreground = ${colors.black}
+
+[module/brightness]
+type = custom/script
+exec = $HOME/scripts/brightness.sh
+interval = 1
+format-prefix = " "
+format-padding = 1
+format-background = ${colors.black}
+format-foreground = ${colors.white}
+
+[module/date]
+type = internal/date
+interval = 1
+date = %d %B %Y
+time = %H:%M %p
+label = " %date%  %time%"
+label-padding = 1
+label-background = ${colors.orange}
+label-foreground = ${colors.black}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+format-volume-background = ${colors.black}
+format-volume-foreground = ${colors.white}
+label-volume = %percentage%%
+format-muted = <label-muted>
+label-muted = " %percentage%%"
+format-muted-padding = 1
+format-muted-background = ${colors.black}
+format-muted-foreground = ${colors.white}
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-font = 2
+
+[module/rhythmbox]
+type = custom/script
+exec = ~/scripts/rhythmbox_song_info.sh
+interval = 1
+label-padding = 1
+label-background = ${colors.white}
+label-foreground = ${colors.black}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 98
+poll-interval = 1
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+format-charging = <ramp-capacity> <label-charging>
+format-charging-padding = 1
+
+format-charging-font = 3
+format-charging-background = ${colors.white}
+format-charging-foreground = ${colors.black}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+
+format-discharging-font = 3
+format-discharging-background = ${colors.white}
+format-discharging-foreground = ${colors.black}
+format-full = <ramp-capacity> <label-full>
+format-full-padding = 1
+format-full-margin = 3
+format-full-font = 3
+format-full-background = ${colors.white}
+format-full-foreground = ${colors.black}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+
+
+
