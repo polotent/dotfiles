@@ -28,7 +28,8 @@ border-top-size = 10
 border-left-size = 10
 border-right-size = 10
 background = ${colors.transparent}
-font-0 = JetBrains Mono:size=10;3
+;font-0 = JetBrains Mono:size=10;3
+font-0 = Consolas:size=10;3
 font-1 = Font Awesome 5 Free Solid:size=12;3
 font-2 = Font Awesome 5 Brands:size=12;3
 modules-left = memory cpu pulseaudio rhythmbox
