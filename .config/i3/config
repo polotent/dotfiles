@@ -124,7 +124,8 @@ bindsym $mod+g exec --no-startup-id steam
 bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+slash exec --no-startup-id alacritty -e mc 
 
-bindsym $mod+Shift+p exec --no-startup-id shutdown now
+bindsym $mod+Mod1+p exec --no-startup-id shutdown now
+bindsym $mod+Mod1+l exec --no-startup-id betterlockscreen -l blur
 
 for_window [class="^.*"] border pixel 2 
 gaps inner 11
