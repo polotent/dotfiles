@@ -122,7 +122,7 @@ bindsym $mod+v exec --no-startup-id vlc
 bindsym $mod+c exec --no-startup-id code
 bindsym $mod+g exec --no-startup-id steam
 bindsym Print exec --no-startup-id flameshot gui
-bindsym $mod+slash exec --no-startup-id alacritty -e mc 
+bindsym $mod+slash exec --no-startup-id alacritty -e ranger 
 
 bindsym $mod+Mod1+p exec --no-startup-id shutdown now
 bindsym $mod+Mod1+l exec --no-startup-id betterlockscreen -l blur
@@ -194,3 +194,6 @@ exec --no-startup-id gnome-keyring-daemon
 
 # Start flameshot (tool for screenshots)
 exec --no-startup-id flameshot
+
+# Start MegaSync
+exec --no-startup-id megasync
